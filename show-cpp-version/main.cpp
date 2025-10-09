@@ -12,34 +12,33 @@
 #include <string>
 
 int main(int argc, char *argv[]) {
-  static int VERSION = -1;
+  int version = -1;
   switch (__cplusplus) {
+  case 202302L:
   case 202101L:
-    VERSION = 23;
+    version = 23;
     break;
   case 202002L:
-    VERSION = 20;
+    version = 20;
     break;
   case 201703L:
-    VERSION = 17;
+    version = 17;
     break;
   case 201402L:
-    VERSION = 14;
+    version = 14;
     break;
   case 201103L:
-    VERSION = 11;
+    version = 11;
     break;
   case 199711L:
-    VERSION = 98;
+    version = 98;
     break;
   }
-  static std::string VERSION_OUTPUT = "";
-  if (VERSION != -1) {
-    VERSION_OUTPUT = "C++" + std::to_string(VERSION);
-  } else {
-    VERSION_OUTPUT = std::to_string(__cplusplus);
-  }
-  std::cout << VERSION_OUTPUT;
-  std::cout << std::endl;
+
+  const std::string VERSION_OUTPUT = (version != -1)
+                                         ? "C++" + std::to_string(version)
+                                         : std::to_string(version);
+  std::cout << VERSION_OUTPUT << std::endl;
+
   return 0;
 }
