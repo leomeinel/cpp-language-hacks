@@ -8,7 +8,9 @@
  * -----
  */
 
+#include "include/use-expected-hpp.hpp"
 #include "include/use-print-hpp.hpp"
+#include <iostream>
 
 #define OUTPUT "Hello World"
 
@@ -19,6 +21,7 @@ int main(int argc, char *argv[]) {
   print_separator();
   USE_PRINT_HPP::use_println((OUTPUT));
   print_separator();
+  USE_EXPECTED_HPP::use_expected();
   return 0;
 }
 

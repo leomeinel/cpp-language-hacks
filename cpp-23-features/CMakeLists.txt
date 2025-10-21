@@ -12,6 +12,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Add executable and specify sources
 set(SOURCES
     main.cpp
+    include/use-expected-hpp.cpp
     include/use-print-hpp.cpp
 )
 add_executable(main.out ${SOURCES})
