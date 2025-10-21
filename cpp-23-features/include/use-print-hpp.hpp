@@ -1,5 +1,5 @@
 /*
- * File: call-println.hpp
+ * File: use-print-hpp.hpp
  * Author: Leopold Meinel (leo@meinel.dev)
  * -----
  * Copyright (c) 2025 Leopold Meinel & contributors
@@ -8,11 +8,13 @@
  * -----
  */
 
-#ifndef CALL_PRINTLN_HPP
-#define CALL_PRINTLN_HPP
+#ifndef USE_PRINT_HPP
+#define USE_PRINT_HPP
 
 #include <string>
 
-void call_println(const std::string &fmt);
+void use_print(const std::string &fmt);
 
-#endif // PRINTLN_HPP
+void use_println(const std::string &fmt);
+
+#endif // PRINT_HPP
