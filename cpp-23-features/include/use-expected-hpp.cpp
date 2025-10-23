@@ -35,9 +35,9 @@ auto get_random_number() -> std::expected<int, parse_error> {
 
 void use_expected() {
   if (const auto num = get_random_number(); num.has_value()) {
-    std::cout << "Correct number generated: " << *num << std::endl;
+    std::cout << "Correct number generated: " << *num << "\n";
   } else if (num.error() == parse_error::invalid_random_num) {
-    std::cout << "Incorrect number generated: " << *num << std::endl;
+    std::cout << "Incorrect number generated: " << *num << "\n";
   } else {
     std::unreachable();
   }

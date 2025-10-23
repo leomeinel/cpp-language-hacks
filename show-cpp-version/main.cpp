@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
   const std::string VERSION_OUTPUT = (version != -1)
                                          ? "C++" + std::to_string(version)
                                          : std::to_string(version);
-  std::cout << VERSION_OUTPUT << std::endl;
+  std::cout << VERSION_OUTPUT << "\n";
 
   return 0;
 }

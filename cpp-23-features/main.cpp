@@ -26,4 +26,4 @@ int main(int argc, char *argv[]) {
 }
 
 #define SEPARATOR "--"
-void print_separator() { std::cout << std::endl << SEPARATOR << std::endl; }
+void print_separator() { std::cout << "\n" << SEPARATOR << "\n"; }
