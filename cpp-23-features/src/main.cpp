@@ -7,22 +7,20 @@
  * URL: https://www.apache.org/licenses/LICENSE-2.0
  */
 
-#include "include/use-expected-hpp.hpp"
-#include "include/use-print-hpp.hpp"
+#include "../include/expected.hpp"
+#include "../include/print.hpp"
 #include <iostream>
 
-#define OUTPUT "Hello World"
+constexpr std::string_view OUTPUT = "Hello World";
+constexpr std::string_view SEPARATOR = "--";
 
-void print_separator();
+void print_separator() { std::cout << "\n" << SEPARATOR << "\n"; }
 
 int main(int argc, char *argv[]) {
-  USE_PRINT_HPP::use_print(OUTPUT);
+  print::use_print(OUTPUT);
   print_separator();
-  USE_PRINT_HPP::use_println((OUTPUT));
+  print::use_println((OUTPUT));
   print_separator();
-  USE_EXPECTED_HPP::use_expected();
+  expected::use_expected();
   return 0;
 }
-
-#define SEPARATOR "--"
-void print_separator() { std::cout << "\n" << SEPARATOR << "\n"; }

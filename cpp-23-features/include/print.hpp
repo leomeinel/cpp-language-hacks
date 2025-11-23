@@ -1,5 +1,5 @@
 /*
- * File: use-print-hpp.hpp
+ * File: print.hpp
  * Author: Leopold Johannes Meinel (leo@meinel.dev)
  * -----
  * Copyright (c) 2025 Leopold Johannes Meinel & contributors
@@ -7,13 +7,17 @@
  * URL: https://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef USE_PRINT_HPP
-#define USE_PRINT_HPP
+#ifndef PRINT_HPP
+#define PRINT_HPP
 
-#include <string>
+#include <string_view>
 
-void use_print(const std::string &fmt);
+namespace print {
 
-void use_println(const std::string &fmt);
+void use_print(const std::string_view &fmt);
+
+void use_println(const std::string_view &fmt);
+
+} // namespace print
 
 #endif // PRINT_HPP

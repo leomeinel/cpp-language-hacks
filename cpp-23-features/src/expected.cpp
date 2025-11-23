@@ -1,5 +1,5 @@
 /*
- * File: use-expected-hpp.cpp
+ * File: expected.cpp
  * Author: Leopold Johannes Meinel (leo@meinel.dev)
  * -----
  * Copyright (c) 2025 Leopold Johannes Meinel & contributors
@@ -7,30 +7,36 @@
  * URL: https://www.apache.org/licenses/LICENSE-2.0
  */
 
-#include "use-expected-hpp.hpp"
+#include "../include/expected.hpp"
 #include <expected>
 #include <iostream>
 #include <random>
 #include <sys/types.h>
 #include <utility>
 
+namespace {
+
 // See: https://en.cppreference.com/w/cpp/utility/expected.html
 auto get_random_number() -> std::expected<int, parse_error> {
-#define START_RANGE 1
-#define END_RANGE 2
-#define EXPECTED_RETVAL 1
+  constexpr int START_RANGE = 1;
+  constexpr int END_RANGE = 2;
+  constexpr int EXPECTED_RETVAL = 1;
   // See: https://cppscripts.com/cpp-random-library
   std::random_device rd;
   std::mt19937 eng(rd());
   std::uniform_int_distribution<> distr(START_RANGE, END_RANGE);
 
   int retval = distr(eng);
-
   if (retval != EXPECTED_RETVAL) {
     return std::unexpected(parse_error::invalid_random_num);
   }
+
   return retval;
 }
+
+} // namespace
+
+namespace expected {
 
 void use_expected() {
   if (const auto num = get_random_number(); num.has_value()) {
@@ -41,3 +47,5 @@ void use_expected() {
     std::unreachable();
   }
 }
+
+} // namespace expected
