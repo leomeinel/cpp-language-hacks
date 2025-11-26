@@ -10,15 +10,12 @@
 #ifndef EXPECTED_HPP
 #define EXPECTED_HPP
 
-namespace {
-
-// See: https://en.cppreference.com/w/cpp/utility/expected.html
-enum class parse_error { invalid_random_num };
-
-} // namespace
-
 namespace expected {
 
+/**
+ * @brief Use expected from standard library
+ *
+ */
 void use_expected();
 
 } // namespace expected

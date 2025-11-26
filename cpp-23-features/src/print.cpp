@@ -13,11 +13,13 @@
 
 namespace print {
 
+/// @copydoc use_print(const std::string_view &)
 void use_print(const std::string_view &fmt) {
   std::cout << "std::print(const std::string_view &fmt): ";
   std::print("{}", fmt);
 };
 
+/// @copydoc use_println(const std::string_view &)
 void use_println(const std::string_view &fmt) {
   std::cout << "std::println(const std::string_view &fmt): ";
   std::println("{}", fmt);

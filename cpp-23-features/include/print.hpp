@@ -14,9 +14,19 @@
 
 namespace print {
 
-void use_print(const std::string_view &fmt);
+/**
+ * @brief Use print from standard library
+ *
+ * @param fmt Format to print
+ */
+void use_print(const std::string_view &text);
 
-void use_println(const std::string_view &fmt);
+/**
+ * @brief Use println from standard library
+ *
+ * @param text Format to print
+ */
+void use_println(const std::string_view &text);
 
 } // namespace print
 

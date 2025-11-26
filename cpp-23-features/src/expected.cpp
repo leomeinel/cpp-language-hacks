@@ -16,7 +16,21 @@
 
 namespace {
 
-// See: https://en.cppreference.com/w/cpp/utility/expected.html
+/**
+ * @brief Custom error enum class
+ *
+ */
+enum class parse_error {
+  /// An invalid random number has been generated
+  invalid_random_num
+};
+
+/**
+ * @brief Get a random number object within certain limits
+ *
+ * @return std::expected<int, parse_error> Random number if successful,
+ * otherwise an error
+ */
 auto get_random_number() -> std::expected<int, parse_error> {
   constexpr int START_RANGE = 1;
   constexpr int END_RANGE = 2;
@@ -38,6 +52,8 @@ auto get_random_number() -> std::expected<int, parse_error> {
 
 namespace expected {
 
+// See: https://en.cppreference.com/w/cpp/utility/expected.html
+/// @copydoc use_expected()
 void use_expected() {
   if (const auto num = get_random_number(); num.has_value()) {
     std::cout << "Correct number generated: " << *num << "\n";
