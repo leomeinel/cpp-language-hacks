@@ -12,22 +12,23 @@
 
 #include <string_view>
 
-namespace print {
+namespace print
+{
 
-/**
- * @brief Use print from standard library
- *
- * @param fmt Format to print
- */
-void use_print(const std::string_view &text);
+  /**
+   * @brief Use print from standard library
+   *
+   * @param fmt Format to print
+   */
+  void use_print(std::string_view text);
 
-/**
- * @brief Use println from standard library
- *
- * @param text Format to print
- */
-void use_println(const std::string_view &text);
+  /**
+   * @brief Use println from standard library
+   *
+   * @param text Format to print
+   */
+  void use_println(std::string_view text);
 
-} // namespace print
+}  // namespace print
 
-#endif // PRINT_HPP
+#endif  // PRINT_HPP
